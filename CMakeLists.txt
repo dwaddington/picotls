@@ -180,3 +180,9 @@ IF (BUILD_FUZZER)
     TARGET_LINK_LIBRARIES(fuzz-client-hello picotls-core picotls-openssl ${OPENSSL_LIBRARIES} ${LIB_FUZZER})
 
 ENDIF()
+
+INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/libpicotls-core.a DESTINATION lib)
+INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/libpicotls-openssl.a DESTINATION lib)
+INSTALL(FILES ${CMAKE_CURRENT_BINARY_DIR}/libpicotls-minicrypto.a DESTINATION lib)
+INSTALL(DIRECTORY include DESTINATION include)
+INSTALL(FILES include/picotls.h DESTINATION include)
